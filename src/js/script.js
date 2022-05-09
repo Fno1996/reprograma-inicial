@@ -25,8 +25,8 @@ const users = [
         age: 20
     }
 ];
-
-function ValidateForm() {
+const result = users.find( ({ email }) => email === 'lucasplc@pbtech.net.br,willianfl@pbtech.net.br' );
+console.log(result) 
     /*
         1. Referenciar elementos dos campos do formulário pelo ID
         2. Verificar se a senha e o e-mail estão válidos 
@@ -34,4 +34,3 @@ function ValidateForm() {
 
         Plus: Alertar o usuário quando o e-mail ou senha estiverem vazios ou incorretos.
     */
-}
