@@ -27,8 +27,9 @@ const users = [
     }
 ];
 function ValidateForm(){
-    var id = documento.getElementById('Submit').forma.identificação;
-    documento.getElementById("onsubmit").innerHTML = id;
+    var event = documento.getElementById("email").forma.identificação;
+    documento.getElementById("email").innerHTML = id;
+
 }
     function mostrarEmails() {
     const lista = users.map(el => el.email);
