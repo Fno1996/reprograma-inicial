@@ -1,3 +1,4 @@
+
 const users = [
 	{
 		login: 'brunohs',
@@ -25,8 +26,15 @@ const users = [
         age: 20
     }
 ];
-const result = users.find( ({ email }) => email === 'lucasplc@pbtech.net.br,willianfl@pbtech.net.br' );
-console.log(result) 
+function validaLogin(param) {
+    const login = users.find(el => el.login === param);
+    
+    if (login === undefined) {
+      console.log('Não encontramos esse usuário');
+    } else {
+      console.log(`O usuário ${login.login} foi encontrado.`)
+    }
+}
     /*
         1. Referenciar elementos dos campos do formulário pelo ID
         2. Verificar se a senha e o e-mail estão válidos 
