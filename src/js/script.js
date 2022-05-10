@@ -27,26 +27,21 @@ const users = [
     }
 ];
 function ValidateForm(){
-    var event = documento.getElementById("email").forma.identificação;
-    documento.getElementById("email").innerHTML = id;
-
+    const btn =document.querySelector("#form");
+    btn.addEventListener("click", function(e){
+        e.preventDefault();
+        const email = document.querySelector("#form");
+        const value = email.value;
+        console.log(value);
+});
 }
-    function mostrarEmails() {
-    const lista = users.map(el => el.email);
-    
-    console.log(`A lista de e-mail foi ${lista}`);
-    var input = document.querySelector("#lista");
-    var texto = input.Value;
-    console.log(texto);
-  }
-  
 function validaLogin(param) {
-    const login = users.find(el => el.login === param);
-    var input = document.querySelector("#login");
-    if (login === undefined) {
+    const login = users.find(el => el.email === param);
+    var input = document.querySelector("#email");
+    if (email === undefined) {
         alert('Não encontramos esse usuário');
     } else {
-      alert(`O usuário ${login.login} foi encontrado.`)
+      alert(`O usuário ${email.email} foi encontrado.`)
     }
 }
 function somarIdade() {
