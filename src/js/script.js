@@ -1,7 +1,7 @@
 
 const users = [
 	{
-		login: 'brunohs',
+		login: "brunohs",
 		email: 'brunohs@pbtech.net.br',
 		age: 18
 	},
@@ -26,38 +26,50 @@ const users = [
         age: 20
     }
 ];
-function ValidateForm(){
-    const btn =document.querySelector("#form");
-    btn.addEventListener("click", function(e){
-        e.preventDefault();
-        const email = document.querySelector("#form");
-        const value = email.value;
-        console.log(value);
-});
+
+ function validar(){
+	 var email = document.getElementById("email");
+	 var senha = document.getElementById("senha");
+	 if (email.value == ""){
+		 alert("E-mail não informado");
+		 email.focus();
+		 return;
+	 }
+if(senha.value == ""){
+	alert("Senha não informada");
+	senha.focus();
+	return;
 }
-function validaLogin(param) {
-    const login = users.find(el => el.email === param);
-    var input = document.querySelector("#email");
-    if (email === undefined) {
-        alert('Não encontramos esse usuário');
-    } else {
-      alert(`O usuário ${email.email} foi encontrado.`)
-    }
+alert("Formulário enviado!")
 }
-function somarIdade() {
-    const idades = users.map(user => user.age);
-    
-    console.log(idades);
-    
-    const soma = idades.reduce((previous, current) => previous + current, 0);
-    
-    console.log(soma);
+
+function mostrarEmails(param) {
+	const lista = users.map(el => el.email);
+	
+	console.log(`A lista de e-mail foi ${lista}`);
+  }
+  
+   mostrarEmails();
+
+ function validaLogin(param) {
+	const email = users.find(el => el.email === param);
+	
+	if (email === undefined) {
+	  console.log('Não encontramos esse usuário');
+	} else {
+	  console.log(`O usuário ${email.email} foi encontrado.`) // "O usuário" + login + "foi encotrado."
+	}
   }
 
-    /*
-        1. Referenciar elementos dos campos do formulário pelo ID
-        2. Verificar se a senha e o e-mail estão válidos 
-        3. Se tudo estiver ok, alertar o usuário que o formulário foi submetido
+function somarIdade() {
+	const idades = users.map(user => user.age);
+	
+	console.log(idades);
+	
+	const soma = idades.reduce((previous, current) => previous + current, 0);
+	
+	console.log(soma);
+}
+  somarIdade();
 
-        Plus: Alertar o usuário quando o e-mail ou senha estiverem vazios ou incorretos.
-    */
+  
