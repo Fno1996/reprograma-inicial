@@ -38,38 +38,28 @@ const users = [
 if(senha.value == ""){
 	alert("Senha não informada");
 	senha.focus();
-	return;
+return;
 }
-alert("Formulário enviado!")
-}
-
-function mostrarEmails(param) {
-	const lista = users.map(el => el.email);
-	
-	console.log(`A lista de e-mail foi ${lista}`);
-  }
-  
-   mostrarEmails();
-
- function validaLogin(param) {
-	const email = users.find(el => el.email === param);
+validaEmail(email.value)
+ValidarSenha(senha.value)
+ }
+   function validaEmail(param) {
+	 const email = users.find(el => el.email === param);
 	
 	if (email === undefined) {
-	  console.log('Não encontramos esse usuário');
+	alert("Não encontramos esse usuário");
 	} else {
-	  console.log(`O usuário ${email.email} foi encontrado.`) // "O usuário" + login + "foi encotrado."
+	  alert(`O usuário ${email.email} foi encontrado.`) 
 	}
   }
 
-function somarIdade() {
+ function ValidarSenha() {
 	const idades = users.map(user => user.age);
-	
-	console.log(idades);
-	
-	const soma = idades.reduce((previous, current) => previous + current, 0);
-	
-	console.log(soma);
+	const soma = idades.reduce((previous, current) => previous + current,0);
+if (senha === soma ) {
+	alert("Formulário enviado com sucesso!!");
+}else {
+	alert("Senha incorreta")
 }
-  somarIdade();
-
+ }
   
