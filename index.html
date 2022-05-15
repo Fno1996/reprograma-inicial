@@ -70,16 +70,19 @@
                     </legend>
                      <!-- A tag <label> serve para colocar um texto junto do campo do form
                     O for indica sobre qual elemento input é o texto na tela -->
+                    <label>
                     <div class="input-group">
-                        <label for="email">Email:</label>
-                         <label>
+                        <label for="email"></label>
+                             <span> E-mail <abbr title="Obrigatório">*</abbr></span>
                         <input type="email" id="email" name="email">
+                        </label>
                      <!-- Cada campo fica dentro de uma label -->
-                    </div>
+                 <label>
                     <div class="input-group">
-                     <label for="senha">Senha:</label>
+                     <label for="senha"></label>
+                     <span>Senha<abbr title="Obrigatório">*</abbr>/</span>
                         <input type="password" id="senha">
-                        </div>
+                      </label>
                     <button type="button" class="botao" onclick="validar()">
                         Continuar
                     </button>

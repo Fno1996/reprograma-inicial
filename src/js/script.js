@@ -52,14 +52,13 @@ ValidarSenha(senha.value)
 	  alert(`O usuário ${email.email} foi encontrado.`) 
 	}
   }
-
- function ValidarSenha() {
+  
+ function ValidarSenha(senha) {
 	const idades = users.map(user => user.age);
 	const soma = idades.reduce((previous, current) => previous + current,0);
-if (senha === soma ) {
-	alert("Formulário enviado com sucesso!!");
-}else {
+	if(senha == soma ){
+		alert("Formulário enviado com Sucesso!!")
+	}else
 	alert("Senha incorreta")
-}
  }
-  
+
